@@ -15,3 +15,22 @@ try:
 except:
     print("No such module like 'matplotlib'")
     exit(0)
+
+cities = []
+X = []
+Y = []
+
+with open("miasta.csv", "r", encoding='utf-8') as data:
+    cities_all = data.readlines()
+
+print(cities_all)
+
+for city in cities_all:
+    datas = city.strip().split(
+        ","
+    )
+    cities.append(datas[0])
+    X.append(float(datas[1]))
+    Y.append(float(datas[2]))
+
+    print(cities, X, Y, sep="\n======\n")

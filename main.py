@@ -32,3 +32,14 @@ for city in cities_all:
     Y.append(float(datas[2]))
 
 print(cities, X, Y, sep="\n======\n")
+
+# creating window
+figure = plt.figure(figsize=(7, 5))
+ax = figure.add_subplot(1, 1, 1, projection=crs.Mercator())
+ax.stock_img()
+
+ax.set_extent([-10, 35, 66, 34], crs=crs.PlateCarree())
+
+plt.scatter(x=Y, y=X, color="red", s=4, alpha=1, transform=crs.PlateCarree())
+
+plt.show()

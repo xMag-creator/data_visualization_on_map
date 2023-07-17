@@ -26,11 +26,9 @@ with open("miasta.csv", "r", encoding='utf-8') as data:
 print(cities_all)
 
 for city in cities_all:
-    datas = city.strip().split(
-        ","
-    )
-    cities.append(datas[0])
+    datas = city.split(",")
+    cities.append(datas[0].strip())
     X.append(float(datas[1]))
     Y.append(float(datas[2]))
 
-    print(cities, X, Y, sep="\n======\n")
+print(cities, X, Y, sep="\n======\n")
